@@ -60,4 +60,15 @@ def predict():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    from pyngrok import ngrok, conf
+import os
+
+# Kill any running processes
+!pkill streamlit
+
+# Run Streamlit app
+os.system('streamlit run hai_dashboard_app.py &')
+
+# Start the tunnel
+public_url = ngrok.connect(8501)
+print("Your Streamlit dashboard is ready at:", public_url)
