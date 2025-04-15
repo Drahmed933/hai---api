@@ -72,3 +72,4 @@ os.system('streamlit run hai_dashboard_app.py &')
 # Start the tunnel
 public_url = ngrok.connect(8501)
 print("Your Streamlit dashboard is ready at:", public_url)
+app.run(host='0.0.0.0', port=5000)
