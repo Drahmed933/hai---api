@@ -1,0 +1,1 @@
+web: python hai_api_server.py
